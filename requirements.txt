@@ -1,0 +1,5 @@
+Django==5.0
+django-browser-reload==1.12.1
+django-tailwind==3.8.0
+pdfkit==0.6.0
+xhtml2pdf==0.2.14

@@ -1,7 +1,6 @@
-# Ecommerce Django website
+# CV generator / Django&Tailwind
 
-This is an ecommerce website built with Django, javascript and tailwind.
-You need to have python installed.
+This is an cv generator website built with Django and tailwind css.
 
 Website purpose : practice
 
@@ -9,24 +8,32 @@ Website purpose : practice
 
 
 KEY FEATURES :
-- products presentation
-- product detail
-- product search bar with product name
-- pagination with the Paginator class provided by django
-- cart
+- Form and generation button
+- View the list of your CV
+- Access to your CV
+- Admin management 
 - tailwind css integration
+- responsive design
 - admin management 
-- using localStorage
-- order form
+
 
 ```bash
 git clone https://github.com/sam-gvt/ecommerce_django.git
 ```
 
-# Create your database
+# Install requirements
+```bash
+pip install -r requirements.txt
+```
+# Generate your database
 ```bash
 python manage.py makemigrations
 python manage.py migrate
+```
+
+# Generate admin (if you want to manage your data via /admin url)
+```bash
+python manage.py createsuperuser
 ```
 
 # Start server 
