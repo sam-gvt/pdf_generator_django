@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <link rel="stylesheet" href="https://cdn.tailwindcss.com">
+    </head>
+    <body>
+
+        <div style="display: flex; justify-content: center;">
+            <div style="padding: 2.5rem; width: 80%; margin-top: 2.5rem; margin-bottom: 2.5rem;">
+                <!-- header (profile) -->
+                <header>
+                    
+                    <div style="display: flex; justify-content: space-between; items: center;">
+                        <div></div>
+                        <div style="">
+                            <h1 style="font-size: 3rem; font-weight: 800;">{{ user_profile.name }}</h1>
+                            <h2 style="font-size: 1.5rem;padding-bottom: 3rem; ">{{ user_profile.job_seek }}</h2>
+                        </div>
+                    </div>
+                </header>
+                <!-- detailed info -->
+                <main style="display: flex; gap: 1rem; margin-top: 2.5rem;">
+                    <div style="width: 33.33%;">
+                        <!-- contact details -->
+                        <strong style="font-size: 1.25rem; font-weight: 500;">Contact Details</strong>
+                        <ul style="margin-top: 0.5rem; margin-bottom: 1.25rem;">
+                            <li style="padding: 0.25rem 0;">
+                                <strong style="margin-right: 0.125rem;">Phone </strong>
+                                <a href="tel:+821023456789" style="display: block;">{{ user_profile.phone }}</a>
+                            </li>
+                            <li style="padding: 0.25rem 0;">
+                                <strong style="margin-right: 0.125rem;">E-mail </strong>
+                                <a href="mailto:" style="display: block;">{{ user_profile.email }}</a>
+                            </li>
+                            <li style="padding: 0.25rem 0;">
+                                <strong style="margin-right: 0.125rem;">Location</strong>
+                                <span style="display: block;">{{ user_profile.location }}</span>
+                            </li>
+                        </ul>
+                        <!-- skills -->
+                        <strong style="font-size: 1.25rem; font-weight: 500;">Skills</strong>
+                        <ul style="margin-top: 0.5rem; margin-bottom: 1.25rem;">
+                            {% for skill in user_profile.skills_as_list %}
+                            <li class="px-2 mt-1">{{ skill }}</li>
+                            {% endfor %}
+                        </ul>
+            
+                        
+                    </div>
+                    <!-- info -->
+                    <div style="width: 66.66%;">
+                        <section>
+                            <!-- about me -->
+                            <h2 style="font-size: 1.5rem; padding-bottom: 0.125rem; border-bottom: 1px solid #4B5563; font-weight: 600;">About</h2>
+                            <p style="margin-top: 1rem; font-size: 0.75rem;">{{ user_profile.summary }}</p>
+                        </section>
+                        <section>
+                            <!-- work experiences -->
+                            <h2 style="font-size: 1.5rem; margin-top: 1.5rem; padding-bottom: 0.125rem; border-bottom: 1px solid #4B5563; font-weight: 600;">Work Experiences</h2>
+                            <ul style="margin-top: 0.5rem;">
+                                {% for previous_work in user_profile.previous_work_as_list %}
+                                <li class="pt-2">
+                                    <p class="text-justify text-xs">
+                                        {{previous_work}}
+                                    </p>
+                                </li>
+                            {% endfor %}
+                            </ul>
+                        </section>
+                        <section>
+                            <!-- education -->
+                            <h2 style="font-size: 1.5rem; margin-top: 1.5rem; padding-bottom: 0.125rem; border-bottom: 1px solid #4B5563; font-weight: 600;">Education</h2>
+                            <ul style="margin-top: 0.5rem;">
+                                <li style="padding-top: 0.25rem;">
+                                    <p style="display: flex; justify-content: space-between; font-size: 0.875rem;">
+                                        <strong style="font-size: 1rem;">School : {{ user_profile.school }}</strong>
+                                    </p>
+                                </li>
+                                <li class="pt-2">
+                                    <p class="flex justify-between text-sm"><strong class="text-base">
+                                        Degree : {{ user_profile.degree }}
+                                    </p>
+                                </li>
+                                <li class="pt-2">
+                                    <p class="flex justify-between text-sm"><strong class="text-base">
+                                         University : {{ user_profile.university }}
+                                    </p>
+                                </li>
+                            </ul>
+                            <strong style="font-size: 1.25rem; font-weight: 500;">Interests</strong>
+                        <ul style="margin-top: 0.5rem;">
+                            {% for interest in user_profile.interests_as_list %}
+                            <li class="px-2 mt-1"> {{ interest }} </li>
+                            {% endfor %}
+                        </ul>
+                        </section>
+                    </div>
+                </main>
+                <!-- short lines to introduce myself -->
+                <footer style="margin-top: 1.5rem;">
+                    <p style="background-color: #4B5563; color: #FFFFFF; text-align: center; font-size: 0.75rem; padding-top: 0.125rem;">Cv Generator by <small>- Sam Grandvincent</small></p>
+                </footer>
+            </div>
+        </div>
+        
+    <!-- header (profile) -->
+
+</body>
+</html>

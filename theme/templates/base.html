@@ -1,0 +1,21 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block link%} {% endblock%}
+    </head>
+    <body>
+        {% tailwind_css %}
+        <div class="container mx-auto pt-14 pb-28">
+            <h1 class="text-3xl text-center italic">My Django & Tailwind website</h1>
+            <h2 class="text-2xl text-center italic">CV generator</h2>
+                {% block content %}
+                {% endblock %}
+        </div>
+    </body>
+</html>
